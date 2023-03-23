@@ -7,7 +7,7 @@ const arr1 = new Array()
 console.log(arr1)
 
 //create an array with 5 empty items
-const arr2 = new Array(5);
+const arr2 = new Array(5)
 console.log(arr2)
 
 //create an array with 5 specified items
@@ -26,5 +26,4 @@ console.log(arr5)
 const arr6 = ["Python", 22, "JavaScript", 56, "a"]
 console.log(arr6)
 
-//cr
 
