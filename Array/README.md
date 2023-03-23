@@ -1,5 +1,3 @@
-Here we are not explaining the code for more information look at the array.js file
-
 #Initialize an Array
 
 const arr1 = new Array()
