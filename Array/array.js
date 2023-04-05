@@ -185,8 +185,68 @@ const resultReduce = arr.reduce((accumulator, currentValue)=> {
 }, 0)
 //console.log(resultReduce) //=> 10
 
+// check whether an element which is passed as an arugment is a array or not
+arr = ["car", "Airplane", "Train", "Bicycle"]
+const resultIsArray = Array.isArray(arr)
+//console.log(resultIsArray) //=> true
+let temp = "Temporary" 
+const NaNresultIsArray = Array.isArray(temp)
+//console.log(NaNresultIsArray) //=> false
 
+// return new array including of the elements which satisfy the condition defined by the callback function
+// arr.filter(callback(element), thisArg)
+arr = [10, 44, 33, 61, 99, 85, 77, 12]
+const resultFilter = arr.filter(element =>{
+    if (element % 2 === 0)
+        return true
+    else
+        return false
+})
+//console.log(resultFilter)  //=> [ 10, 44, 12 ]
 
+// create a new array with the return value of the callback function
+// arr.map(callback(currentValue), thisArg)
+arr = [1, 2, 3, 4, 5, 6]
+const resultMap = arr.map(element=>{
+    return element * 2
+})
+//console.log(arr)  //=> [ 1, 2, 3, 4, 5, 6 ]
+//console.log(resultMap) //=> [ 1, 2, 3, 4, 5, 6 ]
+
+// for each elemet in the array execute the callback function
+arr = ["Apple", "Orange", "Banana", "strawberry"]
+arr.forEach (element =>{
+    //console.log(element)   //=> Apple    //=> Orange    //=> Orange    //=> strawberry
+})
+
+// this function return true if any element of the array pass the condtion defined in the callback function
+// arr.some(callback(currentValue), thisArg)
+arr = [1, 3, 5, 8, 9, 11, 41]
+const resultSome = arr.some (element=> element % 2 === 0)
+//console.log(resultSome)  //=> true
+
+// return true if all elements in the array pass the condition defiend by callback function
+arr = [1, 2, 3, 4, "Apple", 8, 9, 10]
+const resultEvery = arr.every (element => Number.isInteger(element))
+//console.log (resultEvery)  //=> false
+
+// return a new array Iterator containg the objects with the key of index and value of the array's value in that index
+arr = ["car", "Airplane", "Train", "Bicycle"]
+const resultEntries = arr.entries()
+//for (let temp of resultEntries){
+//    console.log(typeof(temp))  //=> object         //=> object              //=> object          //=> object   
+//    console.log(temp)         //=> [ 0, 'car' ]   //=>  [ 1, 'Airplane' ]  //=> [ 2, 'Train' ]  //=> [ 3, 'Bicycle' ]
+//}
+//console.log(resultEntries)  //=> Object [Array Iterator] {}
+
+// return a new array iterator containg of the keys (index number) of each element in the array
+arr = ["Snake", "Lion", "Camel", "Donkey "]
+const resultKeys = arr.keys()
+//for (let temp of resultKeys){
+//    console.log(typeof(temp))  //=> number   //=> number   //=> number   //=> number   
+//    console.log(temp)         //=> 0        //=> 1        //=> 2        //=> 3
+//}
+//console.log(resultEntries)  //=> Object [Array Iterator] {}
 
 
 
