@@ -130,14 +130,14 @@ const sliceReturn = arrRandom.slice(2, 6)
 //console.log(sliceReturn) //=> [ 0, 525, 'A', 'car' ]
 arrRandom.fill("slice")
 //console.log(sliceReturn) //=> [ 0, 525, 'A', 'car' ]
-//console.log(arrRandom) //=> ['slice', 'slice', 'slice', 'slice', 'slice', 'slice', 'slice', 'slice', 'slice', 'slice', 'slice' ]
+//console.log(arrRandom)  //=> ['slice', 'slice', 'slice', 'slice', 'slice', 'slice', 'slice', 'slice', 'slice', 'slice', 'slice' ]
 
 // return the index of the first element which satisfy the callback function condition arr.findIndex(callback(element, index, arr),thisArg)
 let arr = [1, 2, 3, 4, 5]
 const findIndexReturn = arr.findIndex( (element, index, arr) => {
-    //console.log(index) //=> 0 //=> 1
-    //console.log(arr) //=> [ 1, 2, 3, 4, 5 ] //=> [ 1, 2, 3, 4, 5 ]
-    //console.log(element) //=> 1 //=> 2
+    //console.log(index)     //=> 0                  //=> 1
+    //console.log(arr)      //=> [ 1, 2, 3, 4, 5 ]  //=> [ 1, 2, 3, 4, 5 ]
+    //console.log(element) //=> 1                  //=> 2
     return element % 2 === 0
 })
 //console.log(findIndexReturn) //=> 1
@@ -145,12 +145,48 @@ const findIndexReturn = arr.findIndex( (element, index, arr) => {
 // return the index of the first element which satisfy the callback function condition arr.find(callback(element, index, arr),thisArg) 
 arr = [2, 4, 6, 11, 13]
 const findReturn = arr.find( (element, index, arr) => {
-    //console.log(index) //=> 0 //=> 1 //=> 2 //=> 3 
-    //console.log(arr) //=> [ 2, 4, 6, 5, 5 ] //=> [ 2, 4, 6, 5, 5 ] //=> [ 2, 4, 6, 5, 5 ] //=> [ 2, 4, 6, 5, 5 ] //=> [ 2, 4, 6, 5, 5 ]
-    //console.log(element) //=> 2 //=> 4 //=> 6 //=> 11
+    //console.log(index)     //=> 0                  //=> 1                  //=> 2                  //=> 3 
+    //console.log(arr)      //=> [ 2, 4, 6, 5, 5 ]  //=> [ 2, 4, 6, 5, 5 ]  //=> [ 2, 4, 6, 5, 5 ]  //=> [ 2, 4, 6, 5, 5 ] 
+    //console.log(element) //=> 2                  //=> 4                  //=> 6                  //=> 11
     return element % 2 !== 0
 })
-console.log(findReturn) //=> 11
+//console.log(findReturn) //=> 11
+
+// check whether or not a value is in the array or not return true or false
+arr = ["hello", "JavaScript", 55, 94, "A", 16]
+const includesReturn = arr.includes("JavaScript")
+//console.log(includesReturn) //=> true
+
+/* 
+// By executing a cacllback function it reduce the array into a single value
+// it starts from right and goes to left it means if we do not specify 
+// the initial value for accumulator will be the most right item
+// arr.reduceRight(callback(accumulator, currentValue), initialValue)
+*/
+arr = [1, 2, 3, 4]
+const resultReduceRight = arr.reduceRight ((accumulator, currentValue)=>{
+    //console.log(accumulator)    //=> 4    //=> 7    //=> 9
+    //console.log(currentValue)  //=> 3    //=> 2    //=> 1
+    return accumulator + currentValue
+})
+//console.log(resultReduceRight) //=> 10
+
+/* 
+// By executing a cacllback function it reduce the array into a single value
+// it starts from left and goes to right it means if we do not specify 
+// the initial value for accumulator will be the most left item
+// arr.reduce(callback(accumulator, currentValue), initialValue)
+*/
+arr = [1, 2, 3, 4]
+const resultReduce = arr.reduce((accumulator, currentValue)=> {
+    //console.log(accumulator)    //=> 0     //=> 1     //=> 3     //=> 6
+    //console.log(currentValue)  //=> 1     //=> 2     //=> 3     //=> 4
+    return accumulator + currentValue
+}, 0)
+//console.log(resultReduce) //=> 10
+
+
+
 
 
 
