@@ -1,4 +1,6 @@
-## array.js file expaling and giving example for each of the them <br />
+<br />
+
+## array.js provide example and explanation <br /> <br />
 # Initialize an Array
 
 const arr1 = new Array() <br />
