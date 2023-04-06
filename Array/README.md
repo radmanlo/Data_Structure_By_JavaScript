@@ -1,4 +1,4 @@
-#### Here we are not explaining for more explanation please look at the array.js file <br />
+## array.js file expaling and giving example for each of the them <br />
 # Initialize an Array
 
 const arr1 = new Array() <br />
