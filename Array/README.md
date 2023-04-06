@@ -1,5 +1,7 @@
 
-## array.js provides example and explanation <br /> <br />
+## array.js provides example and explanation <br />
+
+ <br />
 # Initialize an Array
 
 const arr1 = new Array() <br />
