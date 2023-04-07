@@ -61,7 +61,14 @@ class LinkedList {
             this.#size++
             return 'new Node is created'
         }else{
-            
+            let curNode = this.#head
+            for (let i = 0; i < this.#size; i++){
+                if (curNode.next != null)
+                    curNode = curNode.next
+                else
+                    curNode.next = newNode
+            }
+            this.#size++
         }
     }
     // functions to be implemented
@@ -71,7 +78,18 @@ class LinkedList {
  
     // Helper Methods
     // isEmpty
-    // PrintList
+    PrintList (){
+        let curNode = this.#head
+        for (let i = 0; i < this.#size; i++){
+            if (i == 0){
+                console.log( `Node ${i} => ${curNode.element}`)
+                curNode = curNode.next
+            }else{
+                console.log(`Node ${i} => ${curNode.element}`)
+                curNode = curNode.next
+            }
+        }
+    }
 
     // return the first node of link list
     get head (){
@@ -83,3 +101,10 @@ class LinkedList {
         return this.#size
     }
 }
+const linkedList = new LinkedList()
+linkedList.add("radman1")
+linkedList.add("radman2")
+linkedList.add("radman3")
+linkedList.add("radman4")
+console.log(linkedList.sizeOfList)
+linkedList.PrintList()
