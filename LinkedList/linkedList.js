@@ -53,7 +53,6 @@ class LinkedList {
         this.#size = 0
     }
 
-    
     add (element) {
         const newNode = new Node(element)
         if (this.#size === 0){
@@ -75,7 +74,7 @@ class LinkedList {
         }
     }
 
-    // insertAt(element, location)
+    // insert the element to the desire location
     insertAt(element, location){
         const newNode = new Node(element)
         let curNode = this.#head
@@ -98,13 +97,39 @@ class LinkedList {
                 else
                     curNode = curNode.next
             }
-            
+            return false
         }
+        return false
     }
 
-    // removeFrom(location)
+    // remove the Node from the desire location
+    removeFrom(location) {
+        let curNode = this.#head
+        let preNode = curNode
+        if (location >= 0 && location < this.#size ){
+            if (location == 0){
+                this.#head = curNode.next
+                this.#size--
+                return true
+            } else {
+                for (let i = 0; i <this.#size; i++){
+                    if ( i == location){
+                        preNode.next = curNode.next
+                        curNode.next = null
+                        this.#size--
+                        return true
+                    } 
+                    preNode = curNode
+                    curNode = curNode.next
+                }
+                return false
+            }
+        }
+        return false
+    }
+
     // removeElement(element)
- 
+    
     // Helper Methods
     // isEmpty
     PrintList (){
@@ -135,5 +160,18 @@ linkedList.insertAt("radman2'", 2)
 linkedList.insertAt("radman5'", 5)
 linkedList.insertAt("radman6'", 6)
 linkedList.insertAt("radman4'", 4)
+linkedList.PrintList()
+console.log("------------------------------------------")
+console.log(linkedList.removeFrom(5))
+console.log(linkedList.sizeOfList)
+linkedList.PrintList()
+console.log("------------------------------------------")
+console.log(linkedList.removeFrom(5))
+console.log(linkedList.sizeOfList)
+linkedList.PrintList()
+console.log(linkedList.removeFrom(5))
+console.log(linkedList.sizeOfList)
+linkedList.PrintList()
+console.log(linkedList.removeFrom(5))
 console.log(linkedList.sizeOfList)
 linkedList.PrintList()
