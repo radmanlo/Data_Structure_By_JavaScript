@@ -128,10 +128,38 @@ class LinkedList {
         return false
     }
 
-    // removeElement(element)
-    
-    // Helper Methods
-    // isEmpty
+    // remove the node based on its element
+    removeElement(element) {
+        let curNode = this.#head
+        let preNode = curNode
+        for (let i = 0; i < this.#size; i++){
+            if (i === 0 && curNode.element === element){
+                this.#head = curNode.next
+                this.#size--
+                return true
+            } else {
+                console.log(curNode.element)
+                if ( element === curNode.element){
+                    preNode.next = curNode.next
+                    curNode.next = null
+                    this.#size--
+                    return true
+                } 
+                preNode = curNode
+                curNode = curNode.next
+            }
+        }
+        return false
+    }
+
+    // indicates linked list is empty or not
+    isEmpty (){
+        if (this.#size === 0 && this.#head === null)
+            return true
+        return false
+    }
+
+    // prints nodes in the linked list
     PrintList (){
         let curNode = this.#head
         for (let i = 0; i < this.#size; i++){
@@ -173,5 +201,13 @@ console.log(linkedList.removeFrom(5))
 console.log(linkedList.sizeOfList)
 linkedList.PrintList()
 console.log(linkedList.removeFrom(5))
+console.log(linkedList.sizeOfList)
+linkedList.PrintList()
+console.log("------------------------------------------")
+console.log(linkedList.removeElement("radman1"))
+console.log(linkedList.sizeOfList)
+linkedList.PrintList()
+console.log("------------------------------------------")
+console.log(linkedList.removeElement("radman4'"))
 console.log(linkedList.sizeOfList)
 linkedList.PrintList()
