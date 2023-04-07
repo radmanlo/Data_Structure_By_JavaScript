@@ -104,6 +104,9 @@ class LinkedList {
 
     // remove the Node from the desire location
     removeFrom(location) {
+        if (this.isEmpty()){
+            return false
+        }
         let curNode = this.#head
         let preNode = curNode
         if (location >= 0 && location < this.#size ){
@@ -130,6 +133,9 @@ class LinkedList {
 
     // remove the node based on its element
     removeElement(element) {
+        if (this.isEmpty()){
+            return false
+        }
         let curNode = this.#head
         let preNode = curNode
         for (let i = 0; i < this.#size; i++){
@@ -160,7 +166,10 @@ class LinkedList {
     }
 
     // prints nodes in the linked list
-    PrintList (){
+    printList (){
+        if (this.isEmpty()){
+            console.log("Linked List is empty")
+        }
         let curNode = this.#head
         for (let i = 0; i < this.#size; i++){
             if (i == 0){
@@ -178,36 +187,53 @@ class LinkedList {
         return this.#size
     }
 }
-const linkedList = new LinkedList()
-linkedList.add("radman1")
-linkedList.add("radman2")
-linkedList.add("radman3")
-linkedList.add("radman4")
-linkedList.insertAt("radman0", 0)
-linkedList.insertAt("radman2'", 2)
-linkedList.insertAt("radman5'", 5)
-linkedList.insertAt("radman6'", 6)
-linkedList.insertAt("radman4'", 4)
-linkedList.PrintList()
-console.log("------------------------------------------")
-console.log(linkedList.removeFrom(5))
-console.log(linkedList.sizeOfList)
-linkedList.PrintList()
-console.log("------------------------------------------")
-console.log(linkedList.removeFrom(5))
-console.log(linkedList.sizeOfList)
-linkedList.PrintList()
-console.log(linkedList.removeFrom(5))
-console.log(linkedList.sizeOfList)
-linkedList.PrintList()
-console.log(linkedList.removeFrom(5))
-console.log(linkedList.sizeOfList)
-linkedList.PrintList()
-console.log("------------------------------------------")
-console.log(linkedList.removeElement("radman1"))
-console.log(linkedList.sizeOfList)
-linkedList.PrintList()
-console.log("------------------------------------------")
-console.log(linkedList.removeElement("radman4'"))
-console.log(linkedList.sizeOfList)
-linkedList.PrintList()
+
+// const linkedList = new LinkedList()
+
+// // Add method examples
+// linkedList.add("radman1")
+// linkedList.add("radman2")
+// linkedList.add("radman3")
+// linkedList.add("radman4")
+
+// // InsertAt method examples
+// linkedList.insertAt("radman0", 0)
+// linkedList.insertAt("radman2'", 2)
+// linkedList.insertAt("radman5'", 5)
+// linkedList.insertAt("radman6'", 6)
+// linkedList.insertAt("radman4'", 4)
+
+// // printList and removeFrom examples
+// linkedList.printList()
+// console.log("------------------------------------------")
+// console.log(linkedList.removeFrom(5))
+// console.log(linkedList.sizeOfList)
+// linkedList.printList()
+// console.log("------------------------------------------")
+// console.log(linkedList.removeFrom(5))
+// console.log(linkedList.sizeOfList)
+// linkedList.printList()
+// console.log(linkedList.removeFrom(5))
+// console.log(linkedList.sizeOfList)
+// linkedList.printList()
+// console.log(linkedList.removeFrom(5))
+// console.log(linkedList.sizeOfList)
+// linkedList.printList()
+// console.log("------------------------------------------")
+
+// // removeElement examples
+// console.log(linkedList.removeElement("radman1"))
+// console.log(linkedList.sizeOfList)
+// linkedList.printList()
+// console.log("------------------------------------------")
+// console.log(linkedList.removeElement("radman4'"))
+// console.log(linkedList.sizeOfList)
+// linkedList.printList()
+
+// console.log(linkedList.removeFrom(0))
+// console.log(linkedList.removeFrom(0))
+// console.log(linkedList.removeFrom(0))
+// linkedList.printList()
+
+// // is empty example
+// console.log(linkedList.isEmpty())
