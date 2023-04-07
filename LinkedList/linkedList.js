@@ -59,20 +59,49 @@ class LinkedList {
         if (this.#size === 0){
             this.#head = newNode
             this.#size++
-            return 'new Node is created'
+            return true
         }else{
             let curNode = this.#head
             for (let i = 0; i < this.#size; i++){
                 if (curNode.next != null)
                     curNode = curNode.next
-                else
+                else{
                     curNode.next = newNode
+                    this.#size++
+                    return true
+                }
             }
-            this.#size++
+            return false
         }
     }
-    // functions to be implemented
+
     // insertAt(element, location)
+    insertAt(element, location){
+        const newNode = new Node(element)
+        let curNode = this.#head
+        if (location >= 0 && location < this.#size ){
+            for (let i = 0; i < this.#size; i++){
+                if(location == 0){
+                    const nodeTemp = this.#head
+                    this.#head = newNode
+                    this.#head.next = nodeTemp
+                    this.#size++
+                    return true
+                }
+                if (location - 1 === i){
+                    const nodeTemp = curNode.next
+                    curNode.next= newNode
+                    newNode.next = nodeTemp
+                    this.#size++
+                    return true
+                }
+                else
+                    curNode = curNode.next
+            }
+            
+        }
+    }
+
     // removeFrom(location)
     // removeElement(element)
  
@@ -91,11 +120,6 @@ class LinkedList {
         }
     }
 
-    // return the first node of link list
-    get head (){
-        return this.#head
-    }
-
     // return the size of the list
     get sizeOfList (){
         return this.#size
@@ -106,5 +130,10 @@ linkedList.add("radman1")
 linkedList.add("radman2")
 linkedList.add("radman3")
 linkedList.add("radman4")
+linkedList.insertAt("radman0", 0)
+linkedList.insertAt("radman2'", 2)
+linkedList.insertAt("radman5'", 5)
+linkedList.insertAt("radman6'", 6)
+linkedList.insertAt("radman4'", 4)
 console.log(linkedList.sizeOfList)
 linkedList.PrintList()
