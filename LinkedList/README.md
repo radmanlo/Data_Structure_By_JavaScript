@@ -13,7 +13,7 @@ private next <br />
 
 ### LinkedList Class <br />
 private head <br />
-private size <br />s
+private size <br />
 
 # Methods
 
