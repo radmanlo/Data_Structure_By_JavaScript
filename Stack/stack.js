@@ -45,30 +45,30 @@ class Stack {
     }
 }
 
-// Create an object from Stack
-const stack = new Stack()
+// // Create an object from Stack
+// const stack = new Stack()
 
-console.log("--------------push----------------")
-// testing push function
-console.log(stack.push("Fruit"))
-console.log(stack.push("Car"))
-console.log(stack.push("laptop"))
-console.log(stack.push("Desk"))
-console.log(stack.push("Monitor"))
-// print the Stack
-stack.printStack()
+// console.log("--------------push----------------")
+// // testing push function
+// console.log(stack.push("Fruit"))
+// console.log(stack.push("Car"))
+// console.log(stack.push("laptop"))
+// console.log(stack.push("Desk"))
+// console.log(stack.push("Monitor"))
+// // print the Stack
+// stack.printStack()
 
-console.log("----------------pop--------------")
-// testing pop function
-stack.pop()
-stack.pop()
-// print the Stack
-stack.printStack()
+// console.log("----------------pop--------------")
+// // testing pop function
+// stack.pop()
+// stack.pop()
+// // print the Stack
+// stack.printStack()
 
-console.log("-----------------peek-------------")
-// testing peek function
-console.log(stack.peek())
+// console.log("-----------------peek-------------")
+// // testing peek function
+// console.log(stack.peek())
 
-console.log("---------------isEmpty---------------")
-console.log(stack.isEmpty())
+// console.log("---------------isEmpty---------------")
+// console.log(stack.isEmpty())
 
