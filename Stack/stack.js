@@ -3,7 +3,7 @@ class Stack {
     // Private variables
     #items
 
-    // Constructor
+    // Constructor, Array is used to implement a Stack
     constructor(){
         this.#items = []
     }
