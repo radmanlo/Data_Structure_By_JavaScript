@@ -4,7 +4,7 @@
 
 class Stack
 
-# property
+# Property
 
 private items 
 
